@@ -20,6 +20,9 @@ Pytanie *pytania;
 void Wczytaj();
 void Powitanie();
 void ZadajPytania();
+{
+    cout << pytania[0].nazwaPytania << endl;
+}
 void LiczPunkty();
 void PrzedstawWynik();
 
