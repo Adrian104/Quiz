@@ -1,4 +1,6 @@
 # depslib dependency file v1.0
-1613492578 source:c:\users\adrian\desktop\quiz\main.cpp
+1613556145 source:c:\users\adrian\desktop\quiz\main.cpp
 	<iostream>
+	<fstream>
+	<string>
 

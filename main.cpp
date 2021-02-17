@@ -22,9 +22,14 @@ void Powitanie();
 void ZadajPytania();
 void LiczPunkty();
 void PrzedstawWynik();
-void Posprzataj();
+
+void Posprzataj()
+{
+    delete[] pytania;
+}
 
 int main()
 {
+    Posprzataj();
     return 0;
 }
