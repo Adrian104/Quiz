@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <locale.h>
 
 using namespace std;
 
@@ -17,7 +18,11 @@ int punkty;
 int iloscPytan;
 Pytanie *pytania;
 
-void Wczytaj();
+void Wczytaj()
+{
+
+}
+
 void Powitanie()
 {
     cout<<"Witam w Quiz'ie!"<<endl;
@@ -26,18 +31,23 @@ void Powitanie()
     cout<<"Na koncu dostaniesz informacje ile punktow zdobyles/as!"<<endl;
     cout<<"Powodzenia!";
 }
-void ZadajPytania();
+
+void ZadajPytania()
 {
     cout << pytania[0].nazwaPytania << endl;
 }
-void LiczPunkty();
+
+void LiczPunkty()
+{
+
+}
+
 void PrzedstawWynik()
 {
     cout<<"Gratulacje ukonczyles/as Quiz!"<<endl;
-    cout<<"Twoj wynik to: "<<wynik<<"\n";
+    cout<<"Twoj wynik to: "<<punkty<<"\n";
     cout<<"Brawo!";
 }
-    
 
 void Posprzataj()
 {
@@ -46,6 +56,13 @@ void Posprzataj()
 
 int main()
 {
+    // Polskie znaki.
+    setlocale(LC_ALL, "polish");
+
+    Wczytaj();
+    Powitanie();
+    PrzedstawWynik();
     Posprzataj();
+
     return 0;
 }
