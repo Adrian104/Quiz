@@ -1,0 +1,35 @@
+Przykladowe pytanie #0
+2
+Przykladowa odpowiedz #0 dla pytania #0
+Przykladowa odpowiedz #1 dla pytania #0
+Przykladowa odpowiedz #2 dla pytania #0 (POPRAWNA)
+
+Przykladowe pytanie #1
+1
+Przykladowa odpowiedz #0 dla pytania #1
+Przykladowa odpowiedz #1 dla pytania #1 (POPRAWNA)
+Przykladowa odpowiedz #2 dla pytania #1
+
+Przykladowe pytanie #2
+0
+Przykladowa odpowiedz #0 dla pytania #2 (POPRAWNA)
+Przykladowa odpowiedz #1 dla pytania #2
+Przykladowa odpowiedz #2 dla pytania #2
+
+Przykladowe pytanie #3
+1
+Przykladowa odpowiedz #0 dla pytania #3
+Przykladowa odpowiedz #1 dla pytania #3 (POPRAWNA)
+Przykladowa odpowiedz #2 dla pytania #3
+
+Przykladowe pytanie #4
+2
+Przykladowa odpowiedz #0 dla pytania #4
+Przykladowa odpowiedz #1 dla pytania #4
+Przykladowa odpowiedz #2 dla pytania #4 (POPRAWNA)
+
+Przykladowe pytanie #5
+0
+Przykladowa odpowiedz #0 dla pytania #5 (POPRAWNA)
+Przykladowa odpowiedz #1 dla pytania #5
+Przykladowa odpowiedz #2 dla pytania #5
