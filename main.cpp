@@ -20,10 +20,10 @@ Pytanie *pytania;
 void Wczytaj();
 void Powitanie(); 
 {
-    count<<"Witam w Quiz'ie!"<<endl;
-    count<<"Na ekranie wyswietla sie pytania, na ktore musisz odpowiedziec."<<endl;
-    count<<"Na kazde pytanie odpowiedz klikajac jedna z liter: "<<" 'A' lub 'B' lub 'C'."<<endl;
-    count<<"Na koncu dostaniesz informacje ile punktow zdobyles/as!"<<endl;
+    count<<"Witam w Quiz'ie!"<<endl
+    count<<"Na ekranie wyswietla sie pytania, na ktore musisz odpowiedziec."<<endl
+    count<<"Na kazde pytanie odpowiedz klikajac jedna z liter: "<<" 'A' lub 'B' lub 'C'."<<endl
+    count<<"Na koncu dostaniesz informacje ile punktow zdobyles/as!"<<endl
     count<<"Powodzenia!"
 }
 void ZadajPytania();
@@ -33,8 +33,8 @@ void ZadajPytania();
 void LiczPunkty();
 void PrzedstawWynik();
 {
-    count<<"Gratulacje ukonczyles/as Quiz!"<<endl;
-    count<<"Twoj wynik to: "<<wynik<<"\n";
+    count<<"Gratulacje ukonczyles/as Quiz!"<<endl
+    count<<"Twoj wynik to: "<<wynik<<"\n"
     count<<"Brawo!"
 }
     
