@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <locale.h>
 
 using namespace std;
 
@@ -18,141 +17,14 @@ int punkty;
 int iloscPytan;
 Pytanie *pytania;
 
-void Wczytaj()
-{
-    std::fstream plik("pytania.txt", std::ios::in);
-    if (!plik.good())
-    {
-        plik.close();
-        std::cout << "Nie uda³o siê otworzyæ pliku pytania.txt" << "\n";
-        throw 1;
-    }
-
-    int iloscLinii = 0;
-    std::string linia;
-
-    while (!plik.eof())
-    {
-        getline(plik, linia);
-        if (linia.length() == 0) continue;
-
-        iloscLinii++;
-    }
-
-    if (iloscLinii % 5 > 0)
-    {
-        plik.close();
-        std::cout << "Z³y format pliku pytania.txt" << "\n";
-        throw 2;
-    }
-
-    iloscPytan = iloscLinii / 5;
-    pytania = new Pytanie[iloscPytan]{};
-
-    plik.clear();
-    plik.seekg(0, std::ios::beg);
-
-    int stan = -1;
-    int indeks = 0;
-
-    while (!plik.eof())
-    {
-        getline(plik, linia);
-        if (linia.length() == 0) continue;
-
-        if (++stan > 4)
-        {
-            stan = 0;
-            indeks++;
-        }
-
-        Pytanie &aktualnePytanie = pytania[indeks];
-        switch(stan)
-        {
-        case 0:
-            aktualnePytanie.nazwaPytania = linia;
-            break;
-
-        case 1:
-            aktualnePytanie.odpPoprawna = std::stoi(linia);
-            break;
-
-        default:
-            aktualnePytanie.odpowiedz[stan - 2] = linia;
-        }
-    }
-
-    plik.close();
-}
-
-// UWAGA !!!
-// Funkcja Wyswietl() jest u¿ywana tylko do testowania quiz-u i zostanie usuniêta w koñcowej wersji.
-void Wyswietl()
-{
-    for (int i = 0; i < iloscPytan; i++)
-    {
-        cout << "Tytu³ : " << pytania[i].nazwaPytania << endl;
-        for (int j = 0; j < 3; j++)
-        {
-            cout << "Odp : " << pytania[i].odpowiedz[j];
-
-            if (pytania[i].odpPoprawna == j) cout << " POPRAWNA" << endl;
-            else cout << endl;
-        }
-
-        cout << endl;
-    }
-
-    cout << endl;
-}
-
-void Powitanie()
-{
-    cout<<"Witam w Quiz'ie!"<<endl;
-    cout<<"Na ekranie wyswietla sie pytania, na ktore musisz odpowiedziec."<<endl;
-    cout<<"Na kazde pytanie odpowiedz klikajac jedna z liter: "<<" 'A' lub 'B' lub 'C'."<<endl;
-    cout<<"Na koncu dostaniesz informacje ile punktow zdobyles/as!"<<endl;
-    cout<<"Powodzenia!";
-}
-
-void ZadajPytania()
-{
-
-}
-
-void LiczPunkty()
-{
-
-}
-
-void PrzedstawWynik()
-{
-    cout<<"Gratulacje ukonczyles/as Quiz!"<<endl;
-    cout<<"Twoj wynik to: "<<punkty<<"\n";
-    cout<<"Brawo!";
-}
-
-void Posprzataj()
-{
-    delete[] pytania;
-}
+void Wczytaj();
+void Powitanie();
+void ZadajPytania();
+void LiczPunkty();
+void PrzedstawWynik();
+void Posprzataj();
 
 int main()
 {
-    // Polskie znaki.
-    setlocale(LC_ALL, "polish");
-
-    try { Wczytaj(); } catch (int x) { return x; }
-
-    // UWAGA !!!
-    // Funkcja Wyswietl() jest u¿ywana tylko do testowania quiz-u i zostanie usuniêta w koñcowej wersji.
-    Wyswietl();
-
-    Powitanie();
-    ZadajPytania();
-    LiczPunkty();
-    PrzedstawWynik();
-    Posprzataj();
-
     return 0;
 }
