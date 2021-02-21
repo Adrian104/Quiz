@@ -14,7 +14,7 @@ struct Pytanie
     string odpowiedz[3];
 };
 
-int punkty;
+int punkty = 0;
 int iloscPytan;
 Pytanie *pytania;
 
@@ -122,10 +122,16 @@ void ZadajPytania()
     for (int i = 0; i < iloscPytan; i++)
     {
         cout << pytania[i].nazwaPytania << endl;
+
+        for(int j = 0; j < 3; j++)
+        {
+            cout << pytania[i].odpowiedz[j] << endl;
+        }
+
         powtorka:
         cout << "Twoja odpowiedz: ";
         cout << endl;
-        cin >>  odp;
+        cin >> odp;
 
         if(odp == 97|| odp == 98|| odp == 99)
         {
@@ -140,13 +146,16 @@ void ZadajPytania()
 
 void LiczPunkty()
 {
-
+    for (int i = 0; i < iloscPytan; i++)
+    {
+        if (pytania[i].odpGracza == pytania[i].odpPoprawna) punkty++;
+    }
 }
 
 void PrzedstawWynik()
 {
     cout<<"Gratulacje ukonczyles/as Quiz!"<<endl;
-    cout<<"Twoj wynik to: "<<punkty<<"\n";
+    cout<<"Twoj wynik to: "<< punkty <<"\n";
     cout<<"Brawo!";
 }
 
@@ -164,7 +173,7 @@ int main()
 
     // UWAGA !!!
     // Funkcja Wyswietl() jest u¿ywana tylko do testowania quiz-u i zostanie usuniêta w koñcowej wersji.
-    //Wyswietl();
+    // Wyswietl();
 
     Powitanie();
     ZadajPytania();
