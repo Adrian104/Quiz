@@ -131,6 +131,10 @@ void Powitanie()
     cout<<"Na kazde pytanie odpowiedz klikajac jedna z liter: "<<" 'a' lub 'b' lub 'c'."<<endl;
     cout<<"Na koncu dostaniesz informacje ile punktow zdobyles/as!"<<endl;
     cout<<"Powodzenia!" << endl;
+
+    cout << endl;
+    system("pause");
+    cout << endl;
 }
 
 void ZadajPytania()
@@ -141,8 +145,15 @@ void ZadajPytania()
     {
         cout << pytania[i].nazwaPytania << endl;
 
-        for(int j = 0; j < 3; j++)
+        for (int j = 0; j < 3; j++)
         {
+            switch (j)
+            {
+                case 0: cout << "a) "; break;
+                case 1: cout << "b) "; break;
+                case 2: cout << "c) ";
+            }
+
             cout << pytania[i].odpowiedz[j] << endl;
         }
 
@@ -159,6 +170,8 @@ void ZadajPytania()
         {
             goto powtorka;
         }
+
+        cout << endl;
     }
 }
 
@@ -174,7 +187,10 @@ void PrzedstawWynik()
 {
     cout<<"Gratulacje ukonczyles/as Quiz!"<<endl;
     cout<<"Twoj wynik to: "<< punkty <<"\n";
-    cout<<"Brawo!";
+    cout<<"Brawo!" << endl;
+
+    cout << endl;
+    system("pause");
 }
 
 void Posprzataj()
