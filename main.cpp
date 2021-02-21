@@ -2,6 +2,8 @@
 #include <fstream>
 #include <string>
 #include <locale.h>
+#include <cstdlib>
+#include <time.h>
 
 using namespace std;
 
@@ -106,6 +108,22 @@ void Wyswietl()
     cout << endl;
 }
 
+void Losuj()
+{
+    for (int cykl = 0; cykl < 5; cykl++)
+    {
+        for (int i = 0; i < iloscPytan; i++)
+        {
+            Pytanie &aktualnePytanie = pytania[i];
+            Pytanie &losowePytanie = pytania[rand() % iloscPytan];
+
+            Pytanie tymczasowePytanie = losowePytanie;
+            losowePytanie = aktualnePytanie;
+            aktualnePytanie = tymczasowePytanie;
+        }
+    }
+}
+
 void Powitanie()
 {
     cout<<"Witam w Quiz'ie!"<<endl;
@@ -166,8 +184,8 @@ void Posprzataj()
 
 int main()
 {
-    // Polskie znaki.
     setlocale(LC_ALL, "polish");
+    srand(unsigned(time(0)));
 
     try { Wczytaj(); } catch (int x) { return x; }
 
@@ -175,6 +193,7 @@ int main()
     // Funkcja Wyswietl() jest u¿ywana tylko do testowania quiz-u i zostanie usuniêta w koñcowej wersji.
     // Wyswietl();
 
+    Losuj();
     Powitanie();
     ZadajPytania();
     LiczPunkty();
